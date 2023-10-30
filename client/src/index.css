@@ -3,8 +3,8 @@
 
 /* Custom properties */
 :root {
-  --color-prim: #181818;
-  --color-sec: #f0f0f0;
+  --color-prim: #f0f0f0;
+  --color-sec: #181818;
   --typo-prim: 'Inter', sans-serif;
   --typo-sec: Helvetica, Arial, sans-serif;
 }
@@ -12,8 +12,8 @@
 /* Dark scheme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-prim: #f0f0f0;
-    --color-sec: #181818;
+    --color-prim: #181818;
+    --color-sec: #f0f0f0;
   }
 }
 
