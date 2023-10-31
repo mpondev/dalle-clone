@@ -10,7 +10,7 @@ import styles from './CreatePost.module.scss';
 
 function CreatePost() {
   const navigate = useNavigate();
-  const [form, setform] = useState({ name: '', prompt: '', photo: '' });
+  const [form, setForm] = useState({ name: '', prompt: '', photo: '' });
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -19,10 +19,13 @@ function CreatePost() {
   const handleSubmit = () => {};
 
   const handleChange = evt => {
-    evt.preventDefault();
+    setForm({ ...form, [evt.target.name]: evt.target.value });
   };
 
-  const handleSurpriseMe = () => {};
+  const handleSurpriseMe = () => {
+    const randomPrompt = getRandomPrompt(form.prompt);
+    setForm({ ...form, prompt: randomPrompt });
+  };
 
   return (
     <section className={styles.create}>
