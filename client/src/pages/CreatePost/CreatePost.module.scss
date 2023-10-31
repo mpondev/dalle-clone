@@ -29,5 +29,103 @@
       flex-direction: column;
       gap: 1.25em;
     }
+
+    .www {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 16em;
+      height: 16em;
+      padding: 0.75em;
+      background-color: #f9fafb;
+      border-width: 1px;
+      border-color: #d1d5db;
+      color: #111827;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      border-radius: 0.5em;
+
+      :focus {
+        color: #3b82f6;
+        border: 1px solid #3b82f6;
+      }
+
+      .photo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .preview {
+        width: 75%;
+        height: 75%;
+        object-fit: contain;
+        opacity: 0.4;
+      }
+
+      .imgLoader {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 0.5em;
+      }
+    }
+
+    .generate {
+      margin-top: 1.25em;
+      display: flex;
+      gap: 1.25em;
+
+      button {
+        color: white;
+        background-color: #047857;
+        font-size: medium;
+        border-radius: 0.5em;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        width: 100%;
+        padding: 0.625em 1.25em;
+        text-align: center;
+
+        @media (min-width: 640px) {
+          width: auto;
+        }
+      }
+    }
+
+    .submit {
+      margin-top: 2.5em;
+
+      p {
+        margin-top: 0.5em;
+        color: #666e75;
+        font-size: 0.875em;
+      }
+
+      button {
+        margin-top: 0.75em;
+        color: white;
+        background-color: #6469ff;
+        font-size: medium;
+        border-radius: 0.5em;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        width: 100%;
+        padding: 0.625em 1.25em;
+        text-align: center;
+
+        @media (min-width: 640px) {
+          width: auto;
+        }
+      }
+    }
   }
 }

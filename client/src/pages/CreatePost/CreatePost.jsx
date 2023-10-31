@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// import preview from assets
+import preview from '../../assets/preview.png';
 import { getRandomPrompt } from '../../utils/index';
 import FormField from '../../components/FormField/FormField';
 import Loader from '../../components/Loader/Loader';
@@ -13,6 +13,8 @@ function CreatePost() {
   const [form, setform] = useState({ name: '', prompt: '', photo: '' });
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const generateImage = () => {};
 
   const handleSubmit = () => {};
 
@@ -52,6 +54,39 @@ function CreatePost() {
             isSurpriseMe
             handleSurpriseMe={handleSurpriseMe}
           />
+          <div className={styles.www}>
+            {form.photo ? (
+              <img
+                src={form.photo}
+                alt={form.prompt}
+                className={styles.photo}
+              />
+            ) : (
+              <img src={preview} alt="preview" className={styles.preview} />
+            )}
+
+            {generatingImg && (
+              <div className={styles.imgLoader}>
+                <Loader />
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className={styles.generate}>
+          <button type="button" onClick={generateImage}>
+            {generatingImg ? 'Generating...' : 'Generate'}
+          </button>
+        </div>
+
+        <div className={styles.submit}>
+          <p>
+            Once you have created the image you want, you can share it with
+            others in the community
+          </p>
+          <button type="submit">
+            {loading ? 'Sharing...' : 'Share with the community'}
+          </button>
         </div>
       </form>
     </section>
